@@ -5,7 +5,7 @@ JOIN StudentSet st on st.Specialty_Id = sp.Id
 GROUP BY 
 ROLLUP(st.year, f.name)
 
- ---Reprt--- 
+ ---Report--- 
 2001 fac1 2
 2001 Total: 2
 2002 fac1 2

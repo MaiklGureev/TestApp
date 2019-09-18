@@ -107,7 +107,7 @@ namespace TestApp
 
                 console.Text += "\r\n" + query;
                 console.Text += "\r\n";
-                console.Text += "\r\n ---Reprt--- \r\n";
+                console.Text += "\r\n ---Report--- \r\n";
                 foreach (var r in res)
                 {
                     year = r.Year;
@@ -128,7 +128,7 @@ namespace TestApp
                     console.Text += "\r\n";
                 }
 
-                //asd
+                
 
 
                 //foreach (var q in facResCount)
