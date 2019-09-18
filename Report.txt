@@ -1,0 +1,17 @@
+
+SELECT st.year, f.name, COUNT(st.Id) as total 
+FROM FacultySet f JOIN SpecialtySet sp on f.Id = sp.Faculty_Id 
+JOIN StudentSet st on st.Specialty_Id = sp.Id 
+GROUP BY 
+ROLLUP(st.year, f.name)
+
+ ---Reprt--- 
+2001 fac1 2
+2001 Total: 2
+2002 fac1 2
+2002 fac2 2
+2002 Total: 4
+2003 fac1 1
+2003 Total: 1
+ Total: 7
+------------------------------------------------------
