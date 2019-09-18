@@ -1,0 +1,16 @@
+C:\Users\Admiral\source\repos\TestApp\TestApp\bin\Debug\TestApp.exe.config
+C:\Users\Admiral\source\repos\TestApp\TestApp\bin\Debug\TestApp.exe
+C:\Users\Admiral\source\repos\TestApp\TestApp\bin\Debug\TestApp.pdb
+C:\Users\Admiral\source\repos\TestApp\TestApp\bin\Debug\EntityFramework.dll
+C:\Users\Admiral\source\repos\TestApp\TestApp\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Admiral\source\repos\TestApp\TestApp\bin\Debug\EntityFramework.xml
+C:\Users\Admiral\source\repos\TestApp\TestApp\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Admiral\source\repos\TestApp\TestApp\obj\Debug\TestApp.Properties.Resources.resources
+C:\Users\Admiral\source\repos\TestApp\TestApp\obj\Debug\TestApp.csproj.GenerateResource.cache
+C:\Users\Admiral\source\repos\TestApp\TestApp\obj\Debug\TestApp.csproj.CoreCompileInputs.cache
+C:\Users\Admiral\source\repos\TestApp\TestApp\obj\Debug\TestApp.csproj.CopyComplete
+C:\Users\Admiral\source\repos\TestApp\TestApp\obj\Debug\TestApp.exe
+C:\Users\Admiral\source\repos\TestApp\TestApp\obj\Debug\TestApp.pdb
+C:\Users\Admiral\source\repos\TestApp\TestApp\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\Admiral\source\repos\TestApp\TestApp\obj\Debug\TestApp.MainForm.resources
+C:\Users\Admiral\source\repos\TestApp\TestApp\obj\Debug\TestApp.csprojAssemblyReference.cache

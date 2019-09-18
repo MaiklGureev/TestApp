@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="FacultySet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SpecialtySet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Faculty_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StudentSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Fio" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Adr" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Phone" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Year" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Specialty_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_FacultySpecialty">
+    <End Role="FacultySet" Type="Self.FacultySet" Multiplicity="1" />
+    <End Role="SpecialtySet" Type="Self.SpecialtySet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FacultySet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SpecialtySet">
+        <PropertyRef Name="Faculty_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SpecialtyStudent">
+    <End Role="SpecialtySet" Type="Self.SpecialtySet" Multiplicity="1" />
+    <End Role="StudentSet" Type="Self.StudentSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SpecialtySet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StudentSet">
+        <PropertyRef Name="Specialty_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MyModelStoreContainer">
+    <EntitySet Name="FacultySet" EntityType="Self.FacultySet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SpecialtySet" EntityType="Self.SpecialtySet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StudentSet" EntityType="Self.StudentSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_FacultySpecialty" Association="Self.FK_FacultySpecialty">
+      <End Role="FacultySet" EntitySet="FacultySet" />
+      <End Role="SpecialtySet" EntitySet="SpecialtySet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SpecialtyStudent" Association="Self.FK_SpecialtyStudent">
+      <End Role="SpecialtySet" EntitySet="SpecialtySet" />
+      <End Role="StudentSet" EntitySet="StudentSet" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
