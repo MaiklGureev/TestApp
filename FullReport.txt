@@ -1,0 +1,58 @@
+
+SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Fio] AS [Fio], 
+    [Extent1].[Adr] AS [Adr], 
+    [Extent1].[Phone] AS [Phone], 
+    [Extent1].[Year] AS [Year], 
+    [Extent1].[Specialty_Id] AS [Specialty_Id]
+    FROM [dbo].[StudentSet] AS [Extent1]
+
+ ---Students--- 
+1 2001 fio1
+2 2001 fio2
+3 2002 fio3
+4 2003 fio4
+5 2002 fio5
+6 2002 fio6
+7 2002 fio7
+------------------------------------------------------
+
+SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Faculty_Id] AS [Faculty_Id]
+    FROM [dbo].[SpecialtySet] AS [Extent1]
+
+ ---Specialtys--- 
+1 specialty1
+2 specialty2
+3 specialty3
+------------------------------------------------------
+
+SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name]
+    FROM [dbo].[FacultySet] AS [Extent1]
+
+ ---Facultys--- 
+1 fac1
+2 fac2
+------------------------------------------------------
+
+SELECT st.year, f.name, COUNT(st.Id) as total 
+FROM FacultySet f JOIN SpecialtySet sp on f.Id = sp.Faculty_Id 
+JOIN StudentSet st on st.Specialty_Id = sp.Id 
+GROUP BY 
+ROLLUP(st.year, f.name)
+
+ ---Report--- 
+2001 fac1 2
+2001 Total: 2
+2002 fac1 2
+2002 fac2 2
+2002 Total: 4
+2003 fac1 1
+2003 Total: 1
+ Total: 7
+------------------------------------------------------
